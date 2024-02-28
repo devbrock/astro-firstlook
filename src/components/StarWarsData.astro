@@ -1,0 +1,17 @@
+---
+const res = await fetch('https://swapi.dev/api/people')
+const data = await res.json();
+const people = await data.results
+---
+
+<p>
+    Star Wars Characters:
+    <ul>
+        {people.map((person:any) => {
+            return (
+                <li>{person.name}</li>
+            )
+        })}
+    </ul>
+
+</p>
